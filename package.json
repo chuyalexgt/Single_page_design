@@ -4,8 +4,8 @@
   "description": "Un proyecto de single page app con vanilla js",
   "main": "./src/index.js",
   "scripts": {
-    "build:dev":"webpack --modo production",
-    "build:pro":"webpack-dev-server --open --modo development"
+    "build:pro": "webpack --mode production",
+    "start": "webpack-cli serve --open --mode development"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/chuyalexgt/Single_page_design#readme",
   "devDependencies": {
     "@babel/core": "7.12.10",
+    "@webpack-cli/init": "1.1.2",
     "babel-loader": "8.2.2",
     "html-webpack-plugin": "4.5.1",
     "webpack": "5.18.0",
