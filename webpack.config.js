@@ -1,5 +1,6 @@
 const path = require ("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 module.exports = {
     entry: "./src/index.js",
@@ -18,6 +19,15 @@ module.exports = {
                 use:{
                     loader: "babel-loader"
                 }
+            },
+            {
+                test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
+                use: {
+                    loader:"url-loader",
+                    options: {
+                        limit:  90000
+                        }
+                    }
             }
         ]
     },
@@ -26,6 +36,14 @@ module.exports = {
             inject: true,
             template: "./public/index.html",
             filename: "./index.html"
-        })
-    ]
+        }),
+        new CopyWebpackPlugin({patterns:[{
+            from: "./src/styles/style.css",
+            to: ""
+        }]})
+        
+    ],
+    devServer: {
+        port: 3000 // <--- Add this line and choose your own port number
+      }
 }

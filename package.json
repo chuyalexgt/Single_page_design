@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "build:pro": "webpack --mode production",
-    "start": "webpack-cli serve --open --mode development"
+    "start": "webpack serve --open --mode development"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,11 @@
   "homepage": "https://github.com/chuyalexgt/Single_page_design#readme",
   "devDependencies": {
     "@babel/core": "7.12.10",
-    "@webpack-cli/init": "1.1.2",
     "babel-loader": "8.2.2",
+    "copy-webpack-plugin": "7.0.0",
+    "file-loader": "6.2.0",
     "html-webpack-plugin": "4.5.1",
+    "url-loader": "4.1.1",
     "webpack": "5.18.0",
     "webpack-cli": "4.4.0",
     "webpack-dev-server": "3.11.2"
